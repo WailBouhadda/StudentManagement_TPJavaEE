@@ -1,4 +1,6 @@
 
+
+
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -19,8 +21,6 @@ public class DBConnection{
 	private static ResultSet rs;
 		
 	
-	
-		
 	
 	static  Connection connect() {
 	

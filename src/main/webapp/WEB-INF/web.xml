@@ -7,7 +7,7 @@
     <welcome-file>index.htm</welcome-file>
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.jsp</welcome-file>
-    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
   </welcome-file-list>
   <servlet>
     <description></description>
@@ -68,5 +68,25 @@
   <servlet-mapping>
     <servlet-name>ServletTest</servlet-name>
     <url-pattern>/ServletTest</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InsertStudent_S</display-name>
+    <servlet-name>InsertStudent_S</servlet-name>
+    <servlet-class>InsertStudent_S</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InsertStudent_S</servlet-name>
+    <url-pattern>/InsertStudent_S</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentTab_S</display-name>
+    <servlet-name>StudentTab_S</servlet-name>
+    <servlet-class>StudentTab_S</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentTab_S</servlet-name>
+    <url-pattern>/StudentTab_S</url-pattern>
   </servlet-mapping>
 </web-app>

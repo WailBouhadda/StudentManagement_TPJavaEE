@@ -1,3 +1,6 @@
+package myPackage;
+
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,8 +10,8 @@ public class Student {
 
 	
 	 int id;
-	 String nom;
-	 String prenom;
+	 String lastName;
+	 String firstName;
 	 int age;
 	 String cne;
 	 
@@ -18,8 +21,8 @@ public class Student {
 		// TODO Auto-generated constructor stub
 		
 		id = this.id;
-		nom = this.nom;
-		prenom = this.prenom;
+		lastName = this.lastName;
+		firstName = this.firstName;
 		age = this.age;
 		cne = this.cne;
 		
@@ -39,26 +42,26 @@ public class Student {
 
 
 
-	public String getNom() {
-		return nom;
+	public String getLastName() {
+		return lastName;
 	}
 
 
 
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 
 
-	public String getPrenom() {
-		return prenom;
+	public String getFirstName() {
+		return firstName;
 	}
 
 
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 

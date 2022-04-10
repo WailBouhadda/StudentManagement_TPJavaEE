@@ -1,3 +1,6 @@
+
+import myPackage.Student;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,7 +24,7 @@ public class StudentManagement {
 		
 		try {
 			st = con.createStatement();
-			st.executeUpdate("insert into students values("+E1.getId()+",'"+E1.getNom()+"','"+E1.getPrenom()+"',"+E1.getAge()+",'"+E1.getCne()+"')");
+			st.executeUpdate("insert into students values("+E1.getId()+",'"+E1.getLastName()+"','"+E1.getFirstName()+"',"+E1.getAge()+",'"+E1.getCne()+"')");
 
 			return true;
 		} catch (SQLException e) {
@@ -43,8 +46,8 @@ public class StudentManagement {
 		while(rs.next()) {
 			Student ST =  new Student();
 			ST.setId(rs.getInt(1));
-			ST.setNom(rs.getString(2));
-			ST.setPrenom(rs.getString(3));
+			ST.setLastName(rs.getString(2));
+			ST.setFirstName(rs.getString(3));
 			ST.setAge(rs.getInt(4));
 			ST.setCne(rs.getString(5));
 			
@@ -60,5 +63,34 @@ public class StudentManagement {
 	}
 	
 		
+	public int DeleteStudents(int age) {
+		int BC=0;
+		int AC=0;
+		int counter=0;
+		con = DBConnection.connect();
 
+		
+		try {
+			st = con.createStatement();
+			rs = st.executeQuery("select * from students");
+			while(rs.next()) {
+				++BC;
+			}
+			st.execute("delete from students where age="+age);
+			rs = st.executeQuery("select * from students");
+			while(rs.next()) {
+				++AC;
+			}
+			counter = BC - AC;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("InserStudent error");
+
+		}
+		
+		
+		return counter;
+		
+	}
 }
