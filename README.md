@@ -19,7 +19,7 @@
 
 <br>
 
-![tpjee2](https://user-images.githubusercontent.com/47559086/162639888-71728ff4-56c0-4b95-a1a2-86e92659ee4f.PNG)
+![tpjee2](https://user-images.githubusercontent.com/47559086/162640020-a60eeab0-b1af-408f-9fd2-3861013659df.PNG)
 
 
 <hr>
