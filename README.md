@@ -13,15 +13,13 @@
 
 ## 3. Some Captures about this project:
 
-![tpJEE](https://user-images.githubusercontent.com/47559086/162639633-89a2b7ab-2175-4952-bc99-fea088174036.PNG)
-
+![tpJEE](https://user-images.githubusercontent.com/47559086/162639884-13c04978-9dad-4e90-aa4b-91f84e11f4ca.PNG)
 <hr>
 
-![tpjee2](https://user-images.githubusercontent.com/47559086/162639659-a6b90d4e-e775-4c20-a9c3-f028e2291f65.PNG)
 
 <br>
 
-![tpjee3](https://user-images.githubusercontent.com/47559086/162639670-5e96ea3f-e7fc-4f52-a716-919983b20504.PNG)
+![tpjee2](https://user-images.githubusercontent.com/47559086/162639888-71728ff4-56c0-4b95-a1a2-86e92659ee4f.PNG)
 
 
 <hr>
