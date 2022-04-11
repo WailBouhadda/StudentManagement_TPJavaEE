@@ -4,7 +4,7 @@
     <%@page import="java.util.ArrayList"%>
     <%@page import="myPackage.Student"%>
   <%
-  ArrayList<myPackage.Student> st = (ArrayList<myPackage.Student>)request.getAttribute("StuArrList");
+  ArrayList<myPackage.Student> st = (ArrayList<Student>)request.getAttribute("StuArrList");
   %>
 <!DOCTYPE html>
 <html>
@@ -16,14 +16,26 @@
 <body>
 
 <form action="StudentTab_S" method="get">
+
 <div class="delete">
- <input type="number" name="age" placeholder="Students age..." required>
-  <button type="submit">Delete</button>
  
+  <input type="number" name="age" placeholder="Students age..." required>
+  
+  <button type="submit">Delete</button>
+  
+  <% if(request.getAttribute("RowsDeleted") == null){ %>
+ 	 <span>0</span>
+  <%}else{ %>
+	 <span><%=request.getAttribute("RowsDeleted") %></span>
+  <%}%>
+  
 </div>
+
 </form>
+
 <table class="table">
 <thead>
+
 <tr>
 <th>ID</th>
 <th>Last Name</th>
@@ -31,7 +43,9 @@
 <th>Age</th>
 <th>CNE</th>
 </tr>
+
 </thead>
+
 <tbody>
 
 <%

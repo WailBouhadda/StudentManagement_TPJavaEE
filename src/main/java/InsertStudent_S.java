@@ -14,10 +14,13 @@ import myPackage.Student;
  * Servlet implementation class InsertStudent_S
  */
 public class InsertStudent_S extends HttpServlet {
+	
 	Student E1 = new Student();
+	StudentManagement ME = new StudentManagement();
+	
 	Statement st;
 	ResultSet rs,id;
-	StudentManagement ME = new StudentManagement();
+	
 	private static final long serialVersionUID = 1L;
        
     /**

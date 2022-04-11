@@ -16,7 +16,7 @@
 
 <form action="InsertStudent_S" method="get" class="infos">
 
-<h1>Test Form</h1>
+<h1>Insert a Student</h1>
  <input type="text" name="lname" placeholder="Last Name" required>
  <input type="text" name="fname" placeholder="First Name" required>
  <input type="text" name="age" placeholder="Age" required>

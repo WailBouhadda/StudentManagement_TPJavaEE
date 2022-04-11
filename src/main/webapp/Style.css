@@ -123,11 +123,17 @@ padding: 20px;
     flex-wrap:nowrap;
     justify-content:space-beetwen;
 }
-
+.delete span{
+	height: 100%;
+	width: 5%;
+	color: red;
+	padding: 25px;
+	
+}
 .delete input{
 	margin: 15px;
 	height: 40px;
-	width:70%;
+	width:65%;
 	padding-left:20px;
 	border: 1px solid black;
 	
