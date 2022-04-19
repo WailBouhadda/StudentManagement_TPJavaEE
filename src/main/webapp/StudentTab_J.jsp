@@ -50,17 +50,64 @@
 
 <%
 Student s = new Student();
-for(int i = 0 ; i < st.size() ; i++) {
+HttpSession ss = request.getSession();
+
+String action="";
+int Id=0;
+
+
+	
+	if(request.getParameter("action")!=null) {
+	
+	action = (String)ss.getAttribute("Action");
+	Id = (int)ss.getAttribute("Id");
+	
+	}
+	%>
+	<%=action %>
+		<%=Id %>
+	
+	<%
+	
+	for(int i = 0 ; i < st.size() ; i++) {
+
+if(action.equals("update")){
+	
+	
 %>
+
+	<form action="StudentTab_S" method="get">
 	<tr> 
 	<% 	s = st.get(i);%>
-	<td><%= s.getId()%></td>
+	<td><%=s.getId()%> <%  ss.setAttribute("id",s.getId()); %></td>
+	<td> <input type="text" name="lastname" value="<%=s.getLastName()%>"></td>
+	<td> <input type="text" name="firstname" value="<%=s.getFirstName()%>"></td> 
+	<td><input type="number" name="age" value="<%=s.getAge()%>"></td> 
+	<td><input type="text" name="cne" value="<%=s.getCne()%>"></td>
+	<td class="action"><input type="submit" name="validation" value="cancel"><input type="submit" name="validation" value="save"></td>
+	</tr>
+	</form>
+<%
+	
+	
+	}else{
+
+
+	
+%>
+
+	<form action="StudentTab_S" method="get">
+	<tr> 
+	<% 	s = st.get(i);%>
+	<td><%=s.getId()%> <%  ss.setAttribute("id",s.getId()); %></td>
 	<td><%=s.getLastName()%></td>
 	<td><%=s.getFirstName()%></td> 
 	<td><%=s.getAge()%></td> 
 	<td><%=s.getCne()%></td>
+	<td class="action"><input type="submit" name="action" value="delete"><input type="submit" name="action" value="update"></td>
 	</tr>
-<%}%>
+	</form>
+<%}}%>
 
 </tbody>
 </table>

@@ -25,6 +25,8 @@ public class StudentManagement {
 		try {
 			st = con.createStatement();
 			st.executeUpdate("insert into students values("+E1.getId()+",'"+E1.getLastName()+"','"+E1.getFirstName()+"',"+E1.getAge()+",'"+E1.getCne()+"')");
+			
+			DBConnection.disconnect();
 
 			return true;
 		} catch (SQLException e) {
@@ -59,11 +61,12 @@ public class StudentManagement {
 		System.out.println("getStudent error");
 	
 	}
+	DBConnection.disconnect();
 	return StuArrL;
 	}
 	
 		
-	public int DeleteStudents(int age) {
+	public int deleteStudentsByAge(int age) {
 		int BC=0;
 		int AC=0;
 		int counter=0;
@@ -89,8 +92,77 @@ public class StudentManagement {
 
 		}
 		
-		
+		DBConnection.disconnect();
 		return counter;
+		
+	}
+	
+	public int deleteStudentById(int id) {
+		int delete =0;
+		con = DBConnection.connect();
+		
+		try {
+			st = con.createStatement();
+			st.execute("delete from students where id="+id);
+			delete=1;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			delete = -1;
+		}
+		
+		DBConnection.disconnect();
+		return delete;
+		
+	}
+	
+	public int updatestudentById(Student s) {
+		
+		int cou;
+		con = DBConnection.connect();
+		
+		try {
+			st = con.createStatement();
+			st.execute("UPDATE etudiant set last name = '"+ s.getLastName() +"', first name = '"+ s.getFirstName() +"',age = "+s.getAge()+",cne = '"+s.getCne()+"' where id = "+s.getId()+" ");
+			cou = 1;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			cou=-1;
+		}
+		
+		
+		return cou;
+		
+		
+	}
+	
+	public boolean userLogin(String user, String pass) {
+		boolean statut=false;
+		
+		con = DBConnection.connect();
+		
+		try {
+			st = con.createStatement();
+			rs = st.executeQuery("select username, password from users");
+			
+			while(rs.next()) {
+			if(rs.getString(2).equals(user) && rs.getString(3).equals(pass)) {
+				
+				statut = true;
+			}else {
+				statut = false;
+			}
+			
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return statut;
+		
 		
 	}
 }

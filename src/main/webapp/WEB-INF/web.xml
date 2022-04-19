@@ -89,4 +89,34 @@
     <servlet-name>StudentTab_S</servlet-name>
     <url-pattern>/StudentTab_S</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Fact_S</display-name>
+    <servlet-name>Fact_S</servlet-name>
+    <servlet-class>Fact_S</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Fact_S</servlet-name>
+    <url-pattern>/Fact_S</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>serv2</display-name>
+    <servlet-name>serv2</servlet-name>
+    <servlet-class>serv2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serv2</servlet-name>
+    <url-pattern>/serv2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Login_S</display-name>
+    <servlet-name>Login_S</servlet-name>
+    <servlet-class>Login_S</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login_S</servlet-name>
+    <url-pattern>/Login_S</url-pattern>
+  </servlet-mapping>
 </web-app>

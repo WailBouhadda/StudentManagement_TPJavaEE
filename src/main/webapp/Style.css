@@ -73,7 +73,7 @@
 .table{
 	
 	margin: auto;
-	width: 800px;
+	width: 1000px;
 	border-radius: 2%;
 	border:2px solid #ececec;
 	
@@ -107,14 +107,48 @@ padding: 20px;
 	background-color : #9e9e9e21;
 	
 }
-
+.table tr .action{
+	
+	padding: 5px;
+	
+}
+.table tr .action input{
+	
+	padding: 5px;
+	margin: 5px;
+	border-radius: 5px;
+	
+	}
+	.table tr .action input:first-of-type{
+	
+		background-color: white;
+	border : 1px solid #df3131;
+	color : #df3131;
+	}
+	
+		.table tr .action input:last-of-type{
+	
+		background-color: white;
+	border : 1px solid #009688;
+	color : #009688;
+	}
+	.table tr .action input:first-of-type:hover{
+	background-color: #df3131;
+		color: white;
+		}
+	
+	
+	.table tr .action input:last-of-type:hover{
+	background-color: #009688;
+		color: white;
+	}
 
 /*StudentTab_S Delete from Style*/
 
 .delete{
 	margin: auto;
 	height:100%;
-	width: 790px;
+	width: 985px;
 	border-radius: 2%;
 	border:2px solid #ececec;
 	padding:5px;
