@@ -123,7 +123,7 @@ public class StudentManagement {
 		
 		try {
 			st = con.createStatement();
-			st.execute("UPDATE etudiant set last name = '"+ s.getLastName() +"', first name = '"+ s.getFirstName() +"',age = "+s.getAge()+",cne = '"+s.getCne()+"' where id = "+s.getId()+" ");
+			st.execute("UPDATE Students set lastname = '"+ s.getLastName() +"', firstname = '"+ s.getFirstName() +"',age = "+s.getAge()+",cne = '"+s.getCne()+"' where id = "+s.getId());
 			cou = 1;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -144,17 +144,17 @@ public class StudentManagement {
 		
 		try {
 			st = con.createStatement();
-			rs = st.executeQuery("select username, password from users");
+			rs = st.executeQuery("select * from users where username = '"+user+"' and password = '"+pass+"'");
 			
-			while(rs.next()) {
-			if(rs.getString(2).equals(user) && rs.getString(3).equals(pass)) {
+			
+			if(rs.next()) {
 				
 				statut = true;
 			}else {
 				statut = false;
 			}
 			
-			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -15,6 +15,10 @@
 </head>
 <body>
 
+<jsp:include page="NavBar_J.jsp"></jsp:include>
+
+<%if(st != null){ %>
+
 <form action="StudentTab_S" method="get">
 
 <div class="delete">
@@ -51,63 +55,74 @@
 <%
 Student s = new Student();
 HttpSession ss = request.getSession();
-
-String action="";
-int Id=0;
-
-
 	
-	if(request.getParameter("action")!=null) {
+	for(int i = 0 ; i < st.size() ; i++) {	
 	
-	action = (String)ss.getAttribute("Action");
-	Id = (int)ss.getAttribute("Id");
+%>
+
+
+
+	<% 	s = st.get(i);%>
+	<tr class="<%=s.getId()%>"> 
+	<form action="StudentTab_S" method="get">
 	
+	<td><input class="<%=s.getId()%>" type="text" name="id" value="<%=s.getId()%>" readonly></td>
+	<td><input class="<%=s.getId()%>" type="text" name="lastname" value="<%=s.getLastName()%>" disabled></td>
+	<td><input class="<%=s.getId()%>" type="text" name="firstname" value="<%=s.getFirstName()%>" disabled></td> 
+	<td><input class="<%=s.getId()%>" type="text" name="age" value="<%=s.getAge()%>" disabled></td> 
+	<td><input class="<%=s.getId()%>" type="text" name="cne" value="<%=s.getCne()%>" disabled></td>
+	<td class="action"><input type="submit" name="action" value="delete"><input class="<%=s.getId()%>" type="button" name="action" value="update"></td>
+	</form>
+	
+	<script>
+	var input = document.querySelectorAll("input");
+	var but =  document.getElementsByName("action");
+	var row = document.querySelectorAll("tr");
+	var Srow = "";
+	var update = "";
+	for(var i = 0 ; i < but.length ; i++){
+		if(but[i].value === "update"){
+			update = but[i];
+			
+		}
+		
 	}
-	%>
-	<%=action %>
-		<%=Id %>
 	
-	<%
+	update.onclick = function(){
+		
+		for(var i = 0 ; i < row.length ; i++){
+			if(row[i].className === this.className){	
+				Srow = row[i];
+				
+				Srow.style = "background-color: #9e9e9e21;"
+			}
+		}
+		
+		for(var i = 0 ; i < input.length ; i++){
+		if(input[i].className === this.className && input[i].disabled){	
+		console.log(input[i].value);		
+		input[i].disabled = false;
+		
+		}
+		
+		
+		this.onclick = function(){
+			
+			Srow.style = "background-color: white;"
+			this.type="submit";
+		}
+		
+		
+		
+	}}
 	
-	for(int i = 0 ; i < st.size() ; i++) {
-
-if(action.equals("update")){
-	
-	
-%>
-
-	<form action="StudentTab_S" method="get">
-	<tr> 
-	<% 	s = st.get(i);%>
-	<td><%=s.getId()%> <%  ss.setAttribute("id",s.getId()); %></td>
-	<td> <input type="text" name="lastname" value="<%=s.getLastName()%>"></td>
-	<td> <input type="text" name="firstname" value="<%=s.getFirstName()%>"></td> 
-	<td><input type="number" name="age" value="<%=s.getAge()%>"></td> 
-	<td><input type="text" name="cne" value="<%=s.getCne()%>"></td>
-	<td class="action"><input type="submit" name="validation" value="cancel"><input type="submit" name="validation" value="save"></td>
+	</script>
 	</tr>
-	</form>
-<%
 	
-	
-	}else{
-
-
-	
-%>
-
-	<form action="StudentTab_S" method="get">
-	<tr> 
-	<% 	s = st.get(i);%>
-	<td><%=s.getId()%> <%  ss.setAttribute("id",s.getId()); %></td>
-	<td><%=s.getLastName()%></td>
-	<td><%=s.getFirstName()%></td> 
-	<td><%=s.getAge()%></td> 
-	<td><%=s.getCne()%></td>
-	<td class="action"><input type="submit" name="action" value="delete"><input type="submit" name="action" value="update"></td>
-	</tr>
-	</form>
-<%}}%>
+<%}%>
+<%}else{%>
+	<jsp:forward page="StudentTab_S"></jsp:forward>	
+<%}%>
 
 </tbody>
 </table>

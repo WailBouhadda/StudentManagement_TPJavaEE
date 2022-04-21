@@ -56,7 +56,7 @@ public class InsertStudent_S extends HttpServlet {
 		ME.inserStudent(E1);
 		
 		
-		response.sendRedirect("StudentTab_S");
+		response.sendRedirect("InsertStudent_J.jsp");
 
 		
 	

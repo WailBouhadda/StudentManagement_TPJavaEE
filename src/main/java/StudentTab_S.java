@@ -36,7 +36,7 @@ public class StudentTab_S extends HttpServlet {
 		
 		// Delete Students By Age
 		
-		if(request.getParameter("age")!=null) {
+		if(request.getParameter("age")!=null && !request.getParameter("action").equals("update")) {
 		int age = Integer.parseInt(request.getParameter("age"));
 		
 		
@@ -61,7 +61,7 @@ public class StudentTab_S extends HttpServlet {
 			
 				HttpSession s = request.getSession();
 
-				int id = (int) s.getAttribute("id");
+				int id = Integer.parseInt(request.getParameter("id"));
 				
 				s.setAttribute("Id", id);
 				
@@ -69,54 +69,29 @@ public class StudentTab_S extends HttpServlet {
 		
 				ME.deleteStudentById(id);
 				
+				action="";
 				
-			}else
+				request.setAttribute("StuArrList", ME.getStudents());
+				request.getRequestDispatcher("StudentTab_J.jsp").forward(request, response);
 				
-				if(action.equals("update")) {
-					
-					//String validation = "";
-					
-					/*validation = request.getParameter("validation");
-					HttpSession s = request.getSession();
-					Student stu = new Student();
-					
-					
-
-					/*if(validation.equals("save")) {
-						
-					/*String lastname= request.getParameter("lastname");
-					stu.setLastName(lastname);
-					String firstname  = request.getParameter("firstname");
-					stu.setFirstName(firstname);
-					int age = Integer.parseInt("age");
-					stu.setAge(age);
-					String cne = request.getParameter("cne");
-					stu.setCne(cne);
-					
-					int id = (int) s.getAttribute("id");
-					
-					s.setAttribute("Id", id);
-					
-					s.setAttribute("Action", action);
-					
-					ME.updatestudentById(stu);
-
-					
-					}else {
-						
-						int id = (int) s.getAttribute("id");
-						
-						s.setAttribute("Id", id);
-						
-						s.setAttribute("Action", action);
-					}*/
-					
-					
-					
-					
-					
-				}
-			
+			}else if(action.equals("update")) {
+				
+				Student stu = new Student();
+				
+				int id = Integer.parseInt(request.getParameter("id"));
+				stu.setId(id);
+				String lname = request.getParameter("lastname");
+				stu.setLastName(lname);
+				String fname = request.getParameter("firstname");
+				stu.setFirstName(fname);
+				int age = Integer.parseInt(request.getParameter("age"));
+				stu.setAge(age);
+				String cne = request.getParameter("cne");
+				stu.setCne(cne);
+				
+				ME.updatestudentById(stu);
+				
+			}
 		}
 		
 		request.setAttribute("StuArrList", ME.getStudents());

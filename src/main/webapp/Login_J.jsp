@@ -4,17 +4,35 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link type="text/css" rel="stylesheet" href="Style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;600;800&family=Fredoka:wght@300;400;500;600&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<title>Login Form</title>
 </head>
 <body>
 
 
-<form action="Login_S" method="post">
+<form action="Login_S" method="post" class="LoginForm">
 
-<input type="text" name="username" placeholder="Enter username ..." required/>
-<input type="password" name="password" placeholder="password"  required/>
+<% String LoFai = (String)request.getAttribute("Failed");
 
-<input type="submit" name="Login" value="val"/>
+if(LoFai != null){
+	if(LoFai.equals("true")){
+	
+%>
+<p style="color:red;">Username or Password Incorrect, Please try again!</p>
+	<% 
+}}
+%>
+
+<input type="text" name="username" placeholder="Username ..." required/>
+<input type="password" name="password" placeholder="Password ..."  required/>
+
+<input type="submit" name="Login" value="Login"/>
+
+
 </form>
 
 </body>

@@ -30,27 +30,25 @@ public class Login_S extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		
-		 String action=request.getParameter("Login");
-
-		 if(action != null) {
-		if(action.equals("val")){
-			
+		String LoginFailed = "";
 		
 		String user = request.getParameter("username");
 		String pass= request.getParameter("password");
-		
-		if(SM.userLogin(user, pass) == true) {
 			
-			request.getRequestDispatcher("/InsertStudent_J.jsp").forward(request, response);
-
+		if(SM.userLogin(user, pass)) {
+			
+			response.sendRedirect("InsertStudent_J.jsp");
+			
+			LoginFailed = "false";
 		}else {
 		
-			 
-			request.getRequestDispatcher("/Login_J.jsp").forward(request, response);
+			LoginFailed = "true";
+			
+			request.setAttribute("Failed", LoginFailed);
+			request.getRequestDispatcher("Login_J.jsp").forward(request, response);
 
 		}
 	}
 
-}}
+ 
 	}

@@ -1,4 +1,3 @@
-<%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,26 +8,27 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;600;800&family=Fredoka:wght@300;400;500;600&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
-<title>Insert new Student</title>
+
+
+<title>NavBar</title>
 </head>
 <body>
 
-<jsp:include page="NavBar_J.jsp"></jsp:include>
 
-<form action="InsertStudent_S" method="get" class="infos">
+<div class="navBar">
 
-<h1>Insert a Student</h1>
- <input type="text" name="lname" placeholder="Last Name" required>
- <input type="text" name="fname" placeholder="First Name" required>
- <input type="text" name="age" placeholder="Age" required>
-  <input type="text" name="cne" placeholder="CNE" required>
- 
- 
- 
- <input type="submit" placeholder="Add">
+	<div class="container">
+	
+		<div class="list">
+		<ul>
+			<li><a href="InsertStudent_J.jsp">Add Student</a></li>
+			<li><a href="StudentTab_J.jsp">Students</a></li>
+		</ul>
+		</div>
+	
+	</div>
 
-</form>
-
+</div>
 
 </body>
 </html>
