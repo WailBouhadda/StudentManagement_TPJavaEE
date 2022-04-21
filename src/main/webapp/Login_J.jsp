@@ -16,6 +16,8 @@
 
 <form action="Login_S" method="post" class="LoginForm">
 
+<h1>Login</h1>
+
 <% String LoFai = (String)request.getAttribute("Failed");
 
 if(LoFai != null){

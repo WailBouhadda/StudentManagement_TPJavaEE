@@ -170,7 +170,7 @@ padding: 20px;
 	padding: 25px;
 	
 }
-.delete input{
+.delete input:first-of-type{
 	margin: 15px;
 	height: 40px;
 	width:65%;
@@ -179,7 +179,7 @@ padding: 20px;
 	
 	
 }
-.delete button{
+.delete input:last-of-type{
 	width:15%;
 		background-color: white;
 	border : 1px solid #df3131;
@@ -191,14 +191,14 @@ padding: 20px;
 	
 }
 
-.delete input:hover{
+.delete input:first-of-type:hover{
 	
 	
 	border: 1px solid #df3131;
 
 }
     
-.delete button:hover{
+.delete input:last-of-type:hover{
 	
 		background-color: #df3131;
 		color: white;

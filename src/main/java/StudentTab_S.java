@@ -36,7 +36,7 @@ public class StudentTab_S extends HttpServlet {
 		
 		// Delete Students By Age
 		
-		if(request.getParameter("age")!=null && !request.getParameter("action").equals("update")) {
+		if(request.getParameter("age")!=null && request.getParameter("delete")!=null) {
 		int age = Integer.parseInt(request.getParameter("age"));
 		
 		
