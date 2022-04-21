@@ -26,6 +26,7 @@
 <hr>
 <br>
 #### Insert Student
+
 ![insertCapture](https://user-images.githubusercontent.com/47559086/164509723-39993701-9003-412a-8e5d-3dbeabb4a155.PNG)
 
 <hr>
@@ -33,6 +34,7 @@
 #### Manage Student Table
 
 ![tableCapture](https://user-images.githubusercontent.com/47559086/164509725-71b7ae6d-0d34-4598-a1c7-bcff62b8ff31.PNG)
+
 <hr>
 <br>
 
