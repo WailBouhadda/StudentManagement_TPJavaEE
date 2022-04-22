@@ -82,7 +82,6 @@
 	
     box-shadow: -1px 4px 20px 0px #88888859;
     padding: 30px;
-    transform: translateY(35px);
 }
 
 .table tr{
@@ -148,6 +147,49 @@ padding: 20px;
 	
 	/*END StudentTab_S Table style*/
 	
+	/*START StudentTab_S filter style*/
+	
+	.filter {
+	
+	width:1000px;
+	margin:auto;
+	border-radius: 2%;
+	padding:5px;
+    display:flex;
+    flex-wrap:nowrap;
+    margin-top:20px;
+    flex-direction: row-reverse;
+	}
+	
+	.filter input{
+	
+	margin: 15px;
+	height: 40px;
+	width:90%;
+	padding-left:20px;
+	border: 1px solid black;
+	margin-left:0px;
+	
+	}	
+	
+	.filter i{
+	
+	    width: 5%;
+    height: 100%;
+    text-align: center;
+    color: black;
+    border: 1px solid black;
+    padding: 12px;
+    margin-left: 15px;
+    margin-top: 15px;
+	}
+	
+	.filter input:focus + i{
+	
+	background-color:black;
+	color:	white;
+	}
+	/*END StudentTab_S filter style*/
 
 /*START StudentTab_S Delete from Style*/
 

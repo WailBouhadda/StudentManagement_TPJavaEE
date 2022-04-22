@@ -11,6 +11,10 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="Style.css">
+  <script src="https://kit.fontawesome.com/e2991dfebd.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet"> 
 <title>Students Table</title>
 </head>
 <body>
@@ -36,6 +40,8 @@
 </div>
 
 </form>
+
+<div class="filter"><input id="filterid" type="text" name="search" placeholder="Search ..."> 	<i class="fa-solid fa-magnifying-glass"></i></div>
 
 <table class="table">
 <thead>
@@ -75,8 +81,10 @@ HttpSession ss = request.getSession();
 	</form>
 	
 	
-	<!-- Change Rows to input by clicking Update button -->
 	<script>
+	
+	<!-- Change Rows to input by clicking Update button -->
+
 	var input = document.querySelectorAll("input");
 	var but =  document.getElementsByName("action");
 	var row = document.querySelectorAll("tr");
@@ -114,7 +122,6 @@ HttpSession ss = request.getSession();
 				
 				delet.value ="cancel";
 			}
-	
 		
 		}
 		
@@ -123,16 +130,46 @@ HttpSession ss = request.getSession();
 			Srow.style = "background-color: white;"
 			this.type="submit";
 			delet.value = "delete";
-		}
+		}	
 		
-		
-		
-		
-		
+	}	
 	}
-		console.log(delet.className);
 	
+	<!-- filter/search function -->
+	
+	var filtervalue = document.getElementById("filterid");
+	
+	
+	filtervalue.onkeyup = function(){
+		
+		var value = this.value.toLowerCase();
+		var table = document.getElementsByTagName("table")[0];
+		var rows = document.getElementsByTagName("tr");
+		
+		for(var i = 1 ; i < rows.length ; i++){
+				
+			var LNI = rows[i].getElementsByTagName("td")[1].querySelector("input");
+			var FNI = rows[i].getElementsByTagName("td")[2].querySelector("input");
+			var CNEI = rows[i].getElementsByTagName("td")[4].querySelector("input");
+			
+			if(LNI || FNI || CNEI){
+				var LN = LNI.value;
+				var FN = FNI.value;
+				var CNE = CNEI.value;
+				
+				if(LN.toLowerCase().indexOf(value) > -1 || FN.toLowerCase().indexOf(value) > -1 || CNE.toLowerCase().indexOf(value) > -1){
+			
+					rows[i].style.display ="";				
+				}else{
+					rows[i].style.display ="none";				
+
+				}
+			}
+			}
+		
+		
 	}
+	
 	
 	</script>
 	</tr>
