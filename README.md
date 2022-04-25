@@ -36,7 +36,7 @@
 
 #### Manage Student Table
 
-![tableCapture](https://user-images.githubusercontent.com/47559086/164509725-71b7ae6d-0d34-4598-a1c7-bcff62b8ff31.PNG)
+![image](https://user-images.githubusercontent.com/47559086/165139709-2462aff4-db15-4ded-b12f-3bc7201d4077.png)
 
 <hr>
 <br>
