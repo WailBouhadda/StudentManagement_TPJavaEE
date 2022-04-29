@@ -60,7 +60,6 @@
 
 <%
 Student s = new Student();
-HttpSession ss = request.getSession();
 	
 	for(int i = 0 ; i < st.size() ; i++) {	
 	

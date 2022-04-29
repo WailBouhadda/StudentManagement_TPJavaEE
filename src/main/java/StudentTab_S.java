@@ -54,6 +54,7 @@ public class StudentTab_S extends HttpServlet {
 		
 		
 		if(request.getParameter("action")!=null) {
+			
 			String action = request.getParameter("action");
 
 			
@@ -62,11 +63,7 @@ public class StudentTab_S extends HttpServlet {
 				HttpSession s = request.getSession();
 
 				int id = Integer.parseInt(request.getParameter("id"));
-				
-				s.setAttribute("Id", id);
-				
-				s.setAttribute("Action", action);
-		
+						
 				ME.deleteStudentById(id);
 				
 				action="";

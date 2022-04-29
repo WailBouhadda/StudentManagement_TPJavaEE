@@ -55,6 +55,7 @@ public class StudentManagement {
 			
 			StuArrL.add(ST);
 		}
+
 		
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
